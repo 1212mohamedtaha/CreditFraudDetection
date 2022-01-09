@@ -1,0 +1,32 @@
+###Kafka & Zookeper
+docker exec -it kafka /bin/sh
+
+kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic first_kafka_topic
+
+kafka-topics.sh --list --zookeeper zookeeper:2181
+kafka-topics.sh --describe --zookeeper zookeeper:2181 --topic dummy_topic
+kafka-topics.sh --delete --zookeeper zookeeper:2181 --topic dummy_topic
+kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic top1
+
+Consumer: NewTerminal
+docker exec -it kafka /bin/shcd /opt/kafka_<version>/bin
+kafka-console-producer.sh --broker-list kafka:9092 --topic messages
+
+kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic messages
+
+kafka-console-consumer.sh --bootstrap-server kafka:9092 --topic messages --from-beginning
+
+
+###postgres
+docker run --name postgres-0 -e POSTGRES_PASSWORD=1212 -d -p 5432:5432 postgres:alpine
+
+###pgadmin
+
+
+
+ && kafka-topics.sh --create --zookeeper zookeeper:2181 --replication-factor 1 --partitions 1 --topic messages
+      && kafka-console-consumer.sh -d --bootstrap-server kafka:9092 --topic messages
+      && kafka-console-producer.sh -d --broker-list kafka:9092 --topic messages
+      "
+docker run -p 80:80 -e 'PGADMIN_DEFAULT_EMAIL=1212.mohamed.taha@gmail.com' -e'PGADMIN_DEFAULT_PASSWORD=1212' -d dpage/pgadmin4
+
