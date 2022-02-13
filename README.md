@@ -8,10 +8,9 @@ fraud alerts, as well as the model performance.
 
 Download the data from Kaggle from this [link](https://www.kaggle.com/mlg-ulb/creditcardfraud) 
 
-Run the training notebook
+Run the thr app/train.ipynp notebook
 
-In training, We tried a semi-supervised learning approach. We trained an autoencoder
-
+In training, We implemented a semi-supervised learning approach. 
 
 ## Deployment Requirements:
 - Kafaka Server
@@ -44,3 +43,6 @@ kafka-topics.sh --zookeeper zookeeper1:2181/kafka --create --topic test
 
 ### In another terminal: Run prod.py
 ### Connect the database to your Grafana or Power BI and create your dashboard. 
+
+You can also run the model inside a docker container by running app/Dockerfile
+
