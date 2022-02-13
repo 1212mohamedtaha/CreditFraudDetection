@@ -41,7 +41,6 @@ kafka-topics.sh --zookeeper zookeeper1:2181/kafka --create --topic test
 
 ### In another terminal: Run prod.py
 
-### In another terminal: Run prod.py
 ### Connect the database to your Grafana or Power BI and create your dashboard. 
 
 You can also run the model inside a docker container by running app/Dockerfile
